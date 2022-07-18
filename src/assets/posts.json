@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": "22",
+      "date": "2022-07-13T21:12:20.974Z",
+      "author": "Darth Vader",
+      "title": "Let's become Jedi friends! (force sensitive users are allowed as well)",
+      "description": "Hello fellow Teddirs! I am new to this part of the galaxy so I am looking to meet other fellow Jedis. Please leave your full name, phone number, email, home address, universe security number, years of jedi experience, and a photo of yourself in the comments! I will follow up with you as soon as possible.",
+      "comments": [
+        {
+          "id": "50",
+          "date": "2022-07-13T21:18:24.974Z",
+          "user": "Han Solo",
+          "text": "Narc alert"
+        },
+        {
+          "id": "60",
+          "date": "2022-07-13T21:15:20.974Z",
+          "user": "Luke Skywalker",
+          "text": "Hello Darth Vader, I would love to be your friend!! My name is Luke Skywalker, 777-777-7777, lukeskywalker@jedi.com, 1111 1st street, Polis Massa, Tatooine"
+        }
+      ]
+    },
+
+    {
+      "id": "222",
+      "date": "2022-07-13T21:10:20.974Z",
+      "author": "Darth Vader",
+      "title": "Looking for people to join the Dark Side",
+      "description": "Come and join me at the Death Star to learn about the power of the dark side. There will be free snacks and drinks! Jedis are STRONGLY encouraged to come.",
+      "comments": []
+    },
+
+    {
+      "id": "11",
+      "date": "2022-07-13T20:40:20.974Z",
+      "author": "Han Solo",
+      "title": "Willing to smuggle ANYTHING to ANYWHERE #BestSmugglerInTheGalaxy",
+      "description": "I can smuggle just about anything anywhere. People, drugs, weapons, if you have the credits I'll move it!",
+      "comments": []
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Luke Skywalker",
+      "password": "1",
+      "messages": [{
+        "id": "12",
+        "users": ["Darth Vader", "Luke Skywalker"],
+        "conversation": [
+          {
+            "date": "2022-07-13T21:20:20.974Z",
+            "user": "Luke Skywalker",
+            "text": "NOOOOOOOOOOOOO!!!!"
+          },
+          {
+            "date": "2022-07-13T21:10:20.974Z",
+            "user": "Darth Vader",
+            "text": "Luke, I am your father"
+          }
+        ],
+        "readBy": ["Darth Vader", "Luke Skywalker"]
+      }]
+    },
+
+    {
+      "id": "2",
+      "username": "Darth Vader",
+      "password": "2",
+      "messages": [{
+        "id": "12",
+        "users": ["Darth Vader", "Luke Skywalker"],
+        "conversation": [
+          {
+            "date": "2022-07-13T21:20:20.974Z",
+            "user": "Luke Skywalker",
+            "text": "NOOOOOOOOOOOOO!!!!"
+          },
+          {
+            "date": "2022-07-13T21:10:20.974Z",
+            "user": "Darth Vader",
+            "text": "Luke, I am your father"
+          }
+        ],
+        "readBy": ["Darth Vader", "Luke Skywalker"]
+      },
+        {
+          "id": "23",
+          "users": ["Han Solo", "Darth Vader"],
+          "conversation": [
+            {
+              "date": "2022-07-16T21:10:20.974Z",
+              "user": "Han Solo",
+              "text": "Need my services?"
+            }
+          ],
+          "readBy": ["Han Solo"]
+        }
+
+      ]
+    },
+
+    {
+      "id": "3",
+      "username": "Han Solo",
+      "password": "3",
+      "messages": [{
+        "id": "23",
+        "users": ["Han Solo", "Darth Vader"],
+        "conversation": [
+          {
+            "date": "2022-07-16T21:10:20.974Z",
+            "user": "Han Solo",
+            "text": "Need my services?"
+          }
+        ],
+        "readBy": ["Han Solo"]
+      }]
+    }
+  ]
+}

@@ -1,1 +1,33 @@
-<p>comment works!</p>
+<div class="row mb-2">
+  <div class="col-auto comment">
+    <div class="row align-items-center mb-1">
+
+      <span class="fw-bold col-auto">{{comment.user}}</span>
+
+      <span class="font-small col-auto mt-1"> {{comment.date | date : 'short'}}</span>
+
+      <div class="col mt-1 text-end mb-1" *ngIf="username === comment.user">
+        <div *ngIf="editing; then editingBtns; else editBtn"></div>
+        <ng-template #editingBtns>
+
+          <button class="btn-sm btn btn-warning font-small" (click)="onDiscard()">Discard</button>
+          &nbsp;
+          <button class="btn-sm btn btn-success font-small" (click)="onSave()">Save</button>
+          &nbsp;
+          <button class="btn-sm btn btn-danger font-small" (click)="onDelete()">Delete</button>
+        </ng-template>
+
+        <ng-template #editBtn>
+
+            <button class="btn-sm btn btn-primary font-small" (click)="onEdit()">Edit</button>
+        </ng-template>
+      </div>
+
+        <span *ngIf="!editing">{{comment.text}}</span>
+
+        <textarea rows='5' *ngIf="editing" [(ngModel)]="editText">{{editText}}</textarea>
+    </div>
+
+    <app-error [errorMessage]="throwError"></app-error>
+  </div>
+</div>

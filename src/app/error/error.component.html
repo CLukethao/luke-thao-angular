@@ -1,1 +1,7 @@
-<p>error works!</p>
+
+
+<div *ngIf="errorMessage" class="row text-center mt-1 mb-2 justify-content-center">
+  <div class="col-auto bg-danger text-white btn">
+    {{errorMessage}}
+  </div>
+</div>

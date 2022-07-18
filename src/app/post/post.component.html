@@ -1,1 +1,76 @@
-<p>post works!</p>
+
+<div class="card mb-3 border border-dark">
+  <div *ngIf="editingPost; then textInputs; else displayCard"></div>
+  <ng-template #textInputs>
+    <div class="card-header">
+      <div class="row">
+
+        <input class="" type="text" placeholder="Title" [(ngModel)]="editTitle"/>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+
+        <textarea rows="5" placeholder="Description..." [(ngModel)]="editDescription">{{editDescription}}</textarea>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #displayCard>
+    <div class="card-header">
+      <h5 class="card-title">{{post.title}}</h5>
+
+    </div>
+
+    <div class="card-body">
+      {{post.description}}
+
+    </div>
+  </ng-template>
+
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-auto">
+
+        <button *ngIf="!editingPost" (click)="showComments()" class="btn btn-primary btn-sm">{{post.comments.length + ' comments'}}</button>
+        &nbsp;
+
+        <span *ngIf="post.author === username">
+          <div *ngIf="editingPost; then editingPostBtns; else editPostBtn"></div>
+
+          <ng-template #editingPostBtns>
+            <button class="btn btn-danger btn-sm" (click)="onDelete()">Delete</button>
+            &nbsp;
+            <button class="btn btn-success btn-sm" (click)="onSave()">Save</button>
+            &nbsp;
+            <button class="btn btn-warning btn-sm" (click)="onDiscard()">Discard</button>
+
+            <app-error [errorMessage]="throwError"></app-error>
+          </ng-template>
+
+          <ng-template #editPostBtn>
+            <button class="btn btn-outline-secondary btn-sm" (click)="onEditPost()">Edit Post</button>
+
+          </ng-template>
+        </span>
+      </div>
+
+      <div class="col text-end align-self-center">Posted by {{post.author + ' ' + (post.date | date : 'short')}}</div>
+    </div>
+  </div>
+
+  <div class="card-footer bg-white" *ngIf="viewComments">
+
+    <div class="row mb-2" id="{{post.id}}" (focusout)="hideSubmit($event)">
+
+        <textarea class="shadow-sm" rows="1" placeholder="Write a comment..." (focus)="showSubmitBtn()" [(ngModel)]="comment"></textarea>
+
+        <button class="btn btn-outline-dark btn-sm col-auto text-end" *ngIf="showSubmit" (click)="onSubmit()">Submit</button>
+    </div>
+
+    <app-error [errorMessage]="throwError"></app-error>
+
+    <app-comment *ngFor="let comment of post.comments" [comment]="comment" [postId]="post.id"></app-comment>
+  </div>
+</div>

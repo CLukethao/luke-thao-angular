@@ -1,0 +1,9 @@
+.comment {
+  background-color: ghostwhite;
+  border-radius: 12px;
+  outline: black solid 1px;
+}
+
+.font-small {
+  font-size: 0.7em;
+}

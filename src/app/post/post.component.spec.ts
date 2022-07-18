@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostComponent } from './post.component';
+import {CommentComponent} from "../comment/comment.component";
+import {ErrorComponent} from "../error/error.component";
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,7 +10,7 @@ describe('PostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      declarations: [ PostComponent, CommentComponent, ErrorComponent ]
     })
     .compileComponents();
   });

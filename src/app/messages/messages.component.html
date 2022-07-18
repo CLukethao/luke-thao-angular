@@ -1,1 +1,59 @@
-<p>messages works!</p>
+
+
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <h1 class="text-center">Messages</h1>
+
+    <div class="row text-start row mt-4">
+      <div *ngFor="let message of messages" class="row border-bottom border-dark border-2 pb-2 mt-2 align-items-center">
+        <div class="col-auto fw-bold">
+
+          {{message.users[0] === username ? message.users[1] : message.users[0]}}
+
+        </div>
+
+        <div class="col-auto">
+          <button class="btn btn-primary btn-sm" (click)="open(content, message)">Open</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Message with {{viewMessage.users[0] === username ? viewMessage.users[1] : viewMessage.users[0]}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(); reset()"></button>
+  </div>
+
+  <div class="modal-body col">
+    <div class="row">
+
+      <textarea rows="3" placeholder="Type message here..." [(ngModel)]="messageText" ></textarea>
+
+      <button type="button" class="btn btn-primary m-0 col-auto mt-1" (click)="onSend()">send</button>
+
+
+      <app-error [errorMessage]="throwError"></app-error>
+
+      <div *ngFor="let message of viewMessage.conversation" class="row mt-2">
+        <div class="row mb-2">
+          <div class="col-auto {{message.user === username ? 'blue-message' : 'message'}}">
+            <div class="row align-items-center mb-1">
+
+              <span class="fw-bold col-auto">{{message.user}}</span>
+
+              <span class="font-small col-auto mt-1"> {{message.date | date : 'short'}}</span>
+
+              <span>{{message.text}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</ng-template>
+
+

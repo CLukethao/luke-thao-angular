@@ -1,0 +1,15 @@
+.message {
+  background-color: ghostwhite;
+  border-radius: 12px;
+  outline: black solid 1px;
+}
+
+.blue-message {
+  background-color: deepskyblue;
+  border-radius: 12px;
+  outline: black solid 1px;
+}
+
+.font-small {
+  font-size: 0.7em;
+}

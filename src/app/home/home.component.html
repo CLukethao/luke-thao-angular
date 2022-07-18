@@ -1,1 +1,46 @@
-<p>home works!</p>
+
+
+<div class="container">
+  <div class="row mt-5">
+    <h1 class="text-center">News Board</h1>
+
+    <div *ngIf="!creatingPost; then createPostBtn; else newPost"></div>
+    <ng-template #createPostBtn>
+      <div class="col-12 mb-1">
+
+        <button class="btn btn-warning" (click)="onNewPost()">New Post</button>
+      </div>
+    </ng-template>
+
+    <ng-template #newPost>
+
+      <div class="col-12 mb-1">
+        <button class="btn btn-primary" (click)="onSubmit()">Submit Post</button>
+        &nbsp;
+        <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+      </div>
+
+      <div class="col-12 mb-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+
+              <input class="" type="text" placeholder="Title" [(ngModel)]="postTitle"/>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+
+              <textarea rows="5" placeholder="Description..." [(ngModel)]="postDescription">{{postDescription}}</textarea>
+            </div>
+          </div>
+        </div>
+
+        <app-error [errorMessage]="throwError"></app-error>
+      </div>
+    </ng-template>
+
+    <app-post *ngFor="let publicPost of publicPosts" [post]="publicPost"></app-post>
+  </div>
+</div>

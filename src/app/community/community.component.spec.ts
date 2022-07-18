@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommunityComponent } from './community.component';
+import {ErrorComponent} from "../error/error.component";
 
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
@@ -8,7 +9,7 @@ describe('CommunityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommunityComponent ]
+      declarations: [ CommunityComponent, ErrorComponent ]
     })
     .compileComponents();
   });

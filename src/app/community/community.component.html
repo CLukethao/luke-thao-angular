@@ -1,1 +1,37 @@
-<p>community works!</p>
+
+
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <h1 class="text-center">Community</h1>
+
+    <app-error [errorMessage]="throwError"></app-error>
+
+    <div class="col-auto text-start row mt-4">
+        <div *ngFor="let user of users" class="row border-bottom border-dark border-2 pb-2 mt-2 align-items-center">
+          <div class="col-6 fw-bold">
+            {{user}}
+          </div>
+
+          <div class="col" *ngIf="user !== this.username">
+            <button class="btn btn-primary btn-sm" (click)="open(content); sendTo(user)">Send Message</button>
+
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Message to {{msgToUsername}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(); cancelMsg()"></button>
+  </div>
+  <div class="modal-body row">
+    <textarea rows="5" placeholder="Type message here..." [(ngModel)]="message"></textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close(); onSend()">send</button>
+  </div>
+
+</ng-template>
